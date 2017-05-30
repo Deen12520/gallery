@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block current %}
+    <ul class="ul_gallery">
+    {% for item in files %}
+        <li><table style="width:150px; height: 200px;">
+            <tr><td>
+                <a href="/gallery/{{'' if not path else path+'/'}}{{item['name']}}"><img style="width:128px;height:128px" alt="" src="{{item['image_url']}}" border="0"></a>
+            </td></tr>
+            <tr><td>{{item['name']}}</td></tr>
+        </table></li>
+    {% end %}
+    </ul>
+    <p style="clear:both"></p>
+{% end %}

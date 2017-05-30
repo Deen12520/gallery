@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>My Photo Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/default.css') }}" />
+    <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header frame">
+            <h1>My Photo Gallery</h1>
+        </div>
+        
+        <div class="navigator frame">
+            Path: <a href="/gallery/">Home</a> /
+            {% for item in paths %}
+                <a href="/gallery/{{item[1]}}/">{{item[0]}}</a> /
+            {% end %}
+        </div>
+        
+        <div class="current">
+            {% block current %}
+            {% end %}
+        </div>
+        <div class="footer frame">
+            <address> Copyright &copy; modify by deen12520 at 2017/5/30</address>
+        </div>
+    </div>
+</body>
+</html>
+ 
+ 

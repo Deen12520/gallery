@@ -1,0 +1,51 @@
+ 
+body{
+	font-size: 14px;
+}
+
+.frame{
+	border: 1px solid #D0D0D0;
+	padding: 5px;
+}
+
+
+.header{
+	margin-bottom: 5px;
+}
+
+.footer{
+	text-align: center;
+	margin-top: 5px;
+}
+
+.current{
+	border-left: 1px solid #D0D0D0;
+	border-right: 1px solid #D0D0D0;
+	border-bottom: 1px solid #D0D0D0;
+	padding: 5px;
+}
+
+.ul_gallery{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.ul_gallery li{
+	float: left;
+	padding: 5px;
+	margin: 0px;
+}
+
+.tb_slide{
+	text-align: center;
+}
+
+.img_current{
+	border: 3px solid blue; 
+}
+
+.img_neighbor{
+	border: 0;
+}

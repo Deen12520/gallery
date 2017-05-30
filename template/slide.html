@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block current %}
+    <table width="100%" class="tb_slide">
+        <tr><td>
+            {% for item in files_tags %}
+                <a href="/gallery/{{item}}">
+                    <img style="width:80px;height:80px" alt="" src="/preview/small/{{item}}" 
+                    {% if fname in item %} 
+                        class="img_current"
+                    {% else %} 
+                        class="img_neighbor"
+                    {% end %}
+                    ></a>
+            {% end %}
+        </td></tr>
+        <tr><td>
+            <img id="img_main" alt="" src="{{image_url}}" border="0">
+        </td></tr>
+        <tr><td><a href="/download/{{path}}">Download {{path.split('/')[-1]}}</a></td></tr>
+    </table>
+    <script type="text/javascript">
+        $("#img_main").click(function(event){
+            var w = this.width / 2;
+            var x = event.pageX-this.offsetLeft;
+            if (x > w){
+                {% if files[-1]!=path %}
+                window.location = "/gallery/{{files[files.index(path)+1]}}";
+                {% end %}
+            }else{
+                {% if files[0]!=path %}
+                window.location = "/gallery/{{files[files.index(path)-1]}}";
+                {% end %}
+            }
+        });
+        $("#img_main").mousemove(function(event){
+            var w = this.width / 2;
+            var x = event.pageX-this.offsetLeft;
+            if (x > w){
+                $("#img_main").css('cursor', 'e-resize');
+            }else{
+                $("#img_main").css('cursor', 'w-resize');
+            }
+        });
+    </script>
+{% end %}
