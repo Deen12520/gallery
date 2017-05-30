@@ -6,7 +6,7 @@ import datetime
 import email
 import time
 
-home_dir = "G:/本科/有一种美叫校园"
+home_dir = "E:/your photo path"    # replace with your path of photo
 cache_dir = "cache"
 
 class GalleryHandler(tornado.web.RequestHandler):
