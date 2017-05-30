@@ -29,8 +29,4 @@ $ python server.py
 Your app should now be running on [localhost:8888](http://localhost:8888/).
 
 
-## Documentation
 
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
